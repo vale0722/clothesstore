@@ -6,8 +6,13 @@ import {
   formatter,
   getPrices,
 } from "../../../infrastructure/helpers/currency-formatter";
+import { useSelector } from "react-redux";
+import { store } from "../../../infrastructure/helpers/store";
+import { addItem } from "../../../infrastructure/reducers/cart.reducer";
 
 export default function Card({ product }) {
+  const car = useSelector((state) => state.car);
+  const addCar = () => store.dispatch(addItem(car, product));
   const prices = getPrices(product.prices);
   return (
     <div className="w-full bg-white px-20 sm:px-40 lg:p-0 transform duration-150 hover:scale-105">
@@ -44,7 +49,10 @@ export default function Card({ product }) {
           )}
 
           <div className="flex items-end justify-center w-full">
-            <button className="btn-default btn-dark text-white gap-2 transform duration-150 hover:scale-105">
+            <button
+              onClick={() => addCar()}
+              className="btn-default btn-dark text-white gap-2 transform duration-150 hover:scale-105"
+            >
               <Icon className="h-4 w-4" iconName="icon-cart-white" />
               Agregar al carrito
             </button>
