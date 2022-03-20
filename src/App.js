@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './presentation/assets/styles/app.scss';
+import Header from "./presentation/components/organisms/Header";
+import React from 'react';
+import Navbar from "./presentation/components/molecules/Navbar";
+import Footer from "./presentation/components/molecules/Footer";
+import Sidebar from "./presentation/components/molecules/Sidebar";
+import {RenderRoutes, ROUTES} from "./infrastructure/helpers/routes";
 
 function App() {
+    const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header setIsOpen={setIsOpen} />
+        <Navbar />
+        <RenderRoutes routes={ROUTES} />
+        <Footer />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 }
