@@ -20,9 +20,17 @@ export default function Sidebar({ children, isOpen, setIsOpen }) {
         }
       >
         <article className="relative w-screen max-w-lg flex flex-col space-y-6 overflow-y-scroll h-full">
-          <div className="flex justify-end p-8">
-            <Icon className="h-6 w-6" iconName="icon-times-purple"></Icon>
-          </div>
+          <span className="flex justify-end p-8">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="h-6 w-6 cursor-pointer"
+            >
+              <Icon
+                className="h-6 w-6 cursor-pointer"
+                iconName="icon-times-purple"
+              />
+            </button>
+          </span>
           <ul className="flex flex-col text-left px-12">
             {navigation.map(function (nav, key) {
               return (
