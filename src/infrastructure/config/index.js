@@ -8,5 +8,5 @@ module.exports = {
     instagram: process.env.REACT_APP_INSTAGRAM_URL,
     youtube: process.env.REACT_APP_YOUTUBE_URL,
     twitter: process.env.REACT_APP_TWITTER_URL,
-  }
+  },
 };

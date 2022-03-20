@@ -1,8 +1,11 @@
-import { products } from "./product.reducer";
-import { combineReducers } from 'redux';
+import { products, paging } from "./product.reducer";
+import search from "./search.reducer";
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    products
+  products,
+  search,
+  paging,
 });
 
 export default rootReducer;

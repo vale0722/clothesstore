@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardPage from "../../presentation/pages/DashboardPage";
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import ProductsPage from "../../presentation/pages/ProductsPage";
 
 export const ROUTES = [
   {
@@ -16,15 +17,25 @@ export const ROUTES = [
       },
     ],
   },
+  {
+    path: "/resultados",
+    key: "results",
+    element: ProductsPage,
+  },
 ];
 
 export function RenderRoutes({ routes }) {
   return (
-      <Routes>
-        {routes.map((route) => {
-          return <Route path={route.path}  key={route.key} element={<route.element props={route} routes={route.routes} />}>
-          </Route>;
-        })}
-      </Routes>
+    <Routes>
+      {routes.map((route) => {
+        return (
+          <Route
+            path={route.path}
+            key={route.key}
+            element={<route.element props={route} routes={route.routes} />}
+          ></Route>
+        );
+      })}
+    </Routes>
   );
 }
