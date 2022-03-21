@@ -1,7 +1,7 @@
 import service from "./service";
 import config from "../config";
 
-export function getProductsMoreSearched({ setIsLoading }) {
+export function getProductsMoreSearched(setIsLoading) {
   setIsLoading(true);
   return getProducts({
     params: {
