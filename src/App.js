@@ -1,6 +1,6 @@
 import "./presentation/assets/styles/app.scss";
 import Header from "./presentation/components/organisms/Header";
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "./presentation/components/molecules/Navbar";
 import Footer from "./presentation/components/molecules/Footer";
 import Sidebar from "./presentation/components/molecules/Sidebar";
