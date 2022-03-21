@@ -1,9 +1,10 @@
 import React from "react";
 import Icon from "../atoms/Icon";
 import { navigation } from "../../assets/utils/navigation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Sidebar({ children, isOpen, setIsOpen }) {
+export default function Sidebar({ isOpen, setIsOpen }) {
+  const navigate = useNavigate();
   return (
     <main
       className={
@@ -38,7 +39,19 @@ export default function Sidebar({ children, isOpen, setIsOpen }) {
                   className="py-4 text-2xl font-bold text-black sidebar-link"
                   key={key}
                 >
-                  <Link to={nav.url}>{nav.name}</Link>
+                  <Link
+                    onClick={() => {
+                      if (nav.action) {
+                        nav.action(navigate);
+                      }
+                      setIsOpen(false);
+                    }}
+                    className="hover:underline"
+                    key={nav.name}
+                    to={nav.url}
+                  >
+                    {nav.name}
+                  </Link>
                 </li>
               );
             })}

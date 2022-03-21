@@ -15,7 +15,12 @@ export default function Card({ product, className }) {
   const addCar = () => store.dispatch(addItem(car, product));
   const prices = getPrices(product.prices);
   return (
-    <div className={"w-full bg-white px-20 sm:px-10 md:px-30 lg:p-0 transform duration-150 hover:scale-105 " + className}>
+    <div
+      className={
+        "w-full bg-white px-20 sm:px-10 md:px-30 lg:p-0 transform duration-150 hover:scale-105 " +
+        className
+      }
+    >
       <div className="w-full h-full border border-gray-100 transform indicator transition cursor-pointer product-card flex flex-col justify-between">
         {prices.promotion ? (
           <span className="indicator-item top-5 left-11 indicator-start bg-purple-600 text-sm px-3 text-white font-bold">

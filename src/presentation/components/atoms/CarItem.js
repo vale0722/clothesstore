@@ -48,7 +48,7 @@ export default function CarItem({ product }) {
             <span className="text-gray-700 mx-2">{product.count}</span>
             <button
               className="text-gray-500 focus:outline-none focus:text-gray-600"
-              disabled={product.count >= product.available_quantity }
+              disabled={product.count >= product.available_quantity}
               onClick={() => addCar()}
             >
               <svg
