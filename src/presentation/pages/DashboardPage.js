@@ -22,13 +22,11 @@ export default function DashboardPage() {
       <div className="flex justify-center items-center">
         <div className="grid lg:grid-cols-2 gap-8 h-1/6 items-center justify-center m-10 container uppercase card-primary">
           <CardPrimary
-            data-aos="fade-left"
             keyword="infantíl"
             title="Moda infantil"
             image={config.statics + "categorias-destacadas-moda-infantil.png"}
           />
           <CardPrimary
-            data-aos="fade-right"
             keyword="protección"
             title="Protección"
             image={config.statics + "categorias-destacadas-proteccion.png"}
