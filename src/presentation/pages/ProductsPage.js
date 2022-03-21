@@ -5,11 +5,12 @@ import { queryProducts } from "../../infrastructure/reducers/product.reducer";
 import Card from "../components/atoms/Card";
 import Paginate from "../components/atoms/Paginate";
 
-export default function ProductsPage() {
+export default function ProductsPage({ setIsLoading }) {
   const products = useSelector((state) => state.products);
   const paging = useSelector((state) => state.paging);
   const search = useSelector((state) => state.search);
-  const fetchProducts = () => store.dispatch(queryProducts("", paging));
+  const fetchProducts = () =>
+    store.dispatch(queryProducts("", paging, setIsLoading));
 
   useEffect(() => {
     if (!search) fetchProducts();
@@ -25,7 +26,7 @@ export default function ProductsPage() {
             );
           })}
         </div>
-        <Paginate />
+        <Paginate setIsLoading={setIsLoading} />
       </div>
     </div>
   );

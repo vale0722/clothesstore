@@ -24,7 +24,7 @@ export const ROUTES = [
   },
 ];
 
-export function RenderRoutes({ routes }) {
+export function RenderRoutes({ routes, setIsLoading }) {
   return (
     <Routes>
       {routes.map((route) => {
@@ -32,8 +32,14 @@ export function RenderRoutes({ routes }) {
           <Route
             path={route.path}
             key={route.key}
-            element={<route.element props={route} routes={route.routes} />}
-          ></Route>
+            element={
+              <route.element
+                setIsLoading={setIsLoading}
+                props={route}
+                routes={route.routes}
+              />
+            }
+          />
         );
       })}
     </Routes>

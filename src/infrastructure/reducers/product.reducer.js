@@ -5,14 +5,16 @@ import {
 
 const initialState = [];
 
-export async function moreSearched(dispatch) {
-  let response = await getProductsMoreSearched();
-  dispatch({ type: "products/more-searched", payload: response });
+export function moreSearched(setIsLoading) {
+  return async function action(dispatch) {
+    let response = await getProductsMoreSearched(setIsLoading);
+    dispatch({ type: "products/more-searched", payload: response });
+  };
 }
 
-export function queryProducts(search, paging) {
+export function queryProducts(search, paging, setIsLoading) {
   return async function action(dispatch) {
-    let response = await searchProducts(search, paging);
+    let response = await searchProducts(search, paging, setIsLoading);
     dispatch({ type: "products/search", payload: response });
   };
 }

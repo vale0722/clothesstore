@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { searchProducts } from "../../../infrastructure/helpers/products";
 
-export default function CardPrimary({ image, title, keyword }) {
+export default function CardPrimary({ image, title, keyword, setIsLoading }) {
   const navigate = useNavigate();
   return (
     <button
-      onClick={() => searchProducts(navigate, keyword)}
+      onClick={() => searchProducts(navigate, keyword, setIsLoading)}
       className="cursor-pointer w-full h-full group group-hover:bg-opacity-50 bg-gray-900 flex justify-center items-center relative"
     >
       <img

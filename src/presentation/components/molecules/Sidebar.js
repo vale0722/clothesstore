@@ -3,7 +3,7 @@ import Icon from "../atoms/Icon";
 import { navigation } from "../../assets/utils/navigation";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Sidebar({ isOpen, setIsOpen }) {
+export default function Sidebar({ isOpen, setIsOpen, setIsLoading }) {
   const navigate = useNavigate();
   return (
     <main
@@ -42,7 +42,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                   <Link
                     onClick={() => {
                       if (nav.action) {
-                        nav.action(navigate);
+                        nav.action(navigate, setIsLoading);
                       }
                       setIsOpen(false);
                     }}

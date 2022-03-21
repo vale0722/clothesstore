@@ -4,36 +4,36 @@ export const navigation = [
   {
     name: "Hombre",
     url: "/resultados",
-    action: (navigate) => {
-      searchProducts(navigate, "hombre");
+    action: (navigate, setIsLoading) => {
+      searchProducts(navigate, "hombre", setIsLoading);
     },
   },
   {
     name: "Mujer",
     url: "/resultados",
-    action: (navigate) => {
-      searchProducts(navigate, "mujer");
+    action: (navigate, setIsLoading) => {
+      searchProducts(navigate, "mujer", setIsLoading);
     },
   },
   {
     name: "Junior",
     url: "/resultados",
-    action: (navigate) => {
-      searchProducts(navigate, "bebes");
+    action: (navigate, setIsLoading) => {
+      searchProducts(navigate, "bebes", setIsLoading);
     },
   },
   {
     name: "Niños",
     url: "/resultados",
-    action: (navigate) => {
-      searchProducts(navigate, "niños");
+    action: (navigate, setIsLoading) => {
+      searchProducts(navigate, "niños", setIsLoading);
     },
   },
   {
     name: "Accesorios",
     url: "/resultados",
-    action: (navigate) => {
-      searchProducts(navigate, "accesorios");
+    action: (navigate, setIsLoading) => {
+      searchProducts(navigate, "accesorios", setIsLoading);
     },
   },
   {

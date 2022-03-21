@@ -1,27 +1,26 @@
 import service from "./service";
 import config from "../config";
 
-const pagingDefault = {
-  limit: 50,
-  offset: 0,
-};
-
-export function getProductsMoreSearched() {
+export function getProductsMoreSearched({ setIsLoading }) {
+  setIsLoading(true);
   return getProducts({
     params: {
       category: config.category_global,
     },
   })
     .then((response) => {
+      setIsLoading(false);
       return response.results;
     })
     .catch((e) => {
+      setIsLoading(false);
       const error = (e && e.message) || e.statusText;
       return Promise.reject(error);
     });
 }
 
-export function searchProducts(search, paging) {
+export function searchProducts(search, paging, setIsLoading) {
+  setIsLoading(true);
   return getProducts({
     params: {
       category: config.category_global,
@@ -31,9 +30,11 @@ export function searchProducts(search, paging) {
     },
   })
     .then((response) => {
+      setIsLoading(false);
       return response;
     })
     .catch((e) => {
+      setIsLoading(false);
       const error = (e && e.message) || e.statusText;
       return Promise.reject(error);
     });
