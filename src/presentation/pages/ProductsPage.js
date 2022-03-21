@@ -21,7 +21,7 @@ export default function ProductsPage() {
         <div className="my-10 md:mx-10 md:mx-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((product, id) => {
             return (
-              <Card className="px-10 md:px-0" product={product} />
+              <Card key={id} className="px-10 md:px-0" product={product} />
             );
           })}
         </div>
