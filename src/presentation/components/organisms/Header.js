@@ -5,7 +5,11 @@ import config from "../../../infrastructure/config";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function Header({ setIsOpen, setIsOpenShoppingCar }) {
+export default function Header({
+  setIsOpen,
+  setIsOpenShoppingCar,
+  setIsLoading,
+}) {
   const car = useSelector((state) => state.car);
 
   return (
@@ -46,7 +50,7 @@ export default function Header({ setIsOpen, setIsOpenShoppingCar }) {
         </div>
       </div>
       <div className="flex gap-4 p-4 w-full">
-        <SearchInput />
+        <SearchInput setIsLoading={setIsLoading} />
         <button
           onClick={() => setIsOpenShoppingCar(true)}
           type="button"

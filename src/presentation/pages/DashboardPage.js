@@ -6,7 +6,7 @@ import { SwiperSlide } from "swiper/react";
 import ProductsMoreSearched from "../components/organisms/ProductsMoreSearched";
 import { banners } from "../assets/utils/banners";
 
-export default function DashboardPage() {
+export default function DashboardPage({ setIsLoading }) {
   const bannerComponent = banners.map((banner, id) => {
     return (
       <SwiperSlide key={id}>
@@ -24,16 +24,18 @@ export default function DashboardPage() {
           <CardPrimary
             keyword="infantíl"
             title="Moda infantil"
+            setIsLoading={setIsLoading}
             image={config.statics + "categorias-destacadas-moda-infantil.png"}
           />
           <CardPrimary
             keyword="protección"
             title="Protección"
+            setIsLoading={setIsLoading}
             image={config.statics + "categorias-destacadas-proteccion.png"}
           />
         </div>
       </div>
-      <ProductsMoreSearched />
+      <ProductsMoreSearched setIsLoading={setIsLoading} />
     </div>
   );
 }

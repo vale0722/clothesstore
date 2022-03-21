@@ -52,3 +52,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Demo
 
 http://clothesstore-test.s3-website-us-east-1.amazonaws.com/
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=vale0722_clothesstore)](https://sonarcloud.io/summary/new_code?id=vale0722_clothesstore)

@@ -6,9 +6,9 @@ import { useSelector } from "react-redux";
 import { store } from "../../../infrastructure/helpers/store";
 import { moreSearched } from "../../../infrastructure/reducers/product.reducer";
 
-export default function ProductsMoreSearched() {
+export default function ProductsMoreSearched({ setIsLoading }) {
   const products = useSelector((state) => state.products);
-  const fetchProducts = () => store.dispatch(moreSearched);
+  const fetchProducts = () => store.dispatch(moreSearched(setIsLoading));
 
   useEffect(() => {
     fetchProducts();

@@ -15,6 +15,7 @@ export default function Carrousel({ children }) {
       pagination={true}
       mousewheel={true}
       keyboard={true}
+      rewind={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
     >
       {children}

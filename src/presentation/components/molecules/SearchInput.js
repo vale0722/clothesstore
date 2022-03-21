@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { searchState } from "../../../infrastructure/reducers/search.reducer";
 import { searchProducts } from "../../../infrastructure/helpers/products";
 
-export default function SearchInput() {
+export default function SearchInput({ setIsLoading }) {
   const search = useSelector((state) => state.search);
   const navigate = useNavigate();
   const setSearch = async (value) => await store.dispatch(searchState(value));
@@ -22,12 +22,12 @@ export default function SearchInput() {
         placeholder="Busca aquí un producto"
         onKeyPress={(event) => {
           if (event.key === "Enter") {
-            searchProducts(navigate, search);
+            searchProducts(navigate, search, setIsLoading);
           }
         }}
       />
       <button
-        onClick={() => searchProducts(navigate, search)}
+        onClick={() => searchProducts(navigate, search, setIsLoading)}
         className="btn-search"
       >
         <Icon className="h-5 w-5" iconName="icon-search" />
